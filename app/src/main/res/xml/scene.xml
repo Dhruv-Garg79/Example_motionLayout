@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetEnd="@id/collapsed"
+        app:constraintSetStart="@id/expanded">
+
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/recyclerView"
+            app:touchAnchorSide="top" />
+    </Transition>
+
+    <ConstraintSet android:id="@+id/expanded">
+        <Constraint
+            android:id="@id/imageView"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                app:attributeName="alpha"
+                app:customIntegerValue="255" />
+        </Constraint>
+        <Constraint
+            android:id="@id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintStart_toStartOf="parent">
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customDimension="24sp"/>
+
+        </Constraint>
+        <Constraint
+            android:id="@id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:pressedTranslationZ="12dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            app:srcCompat="@android:drawable/ic_input_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/collapsed">
+        <Constraint
+            android:id="@id/imageView"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                app:attributeName="alpha"
+                app:customIntegerValue="15" />
+        </Constraint>
+        <Constraint
+            android:id="@id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <CustomAttribute
+                app:attributeName="textSize"
+                app:customDimension="18sp"/>
+        </Constraint>
+        <Constraint
+            android:id="@id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginEnd="8dp"
+            app:srcCompat="@android:drawable/ic_input_add"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="parent">
+        </Constraint>
+    </ConstraintSet>
+
+    <!--<Transition-->
+        <!--app:constraintSetEnd="@id/end"-->
+        <!--app:constraintSetStart="@id/start">-->
+
+        <!--<OnClick-->
+            <!--app:duration="1000"-->
+            <!--app:target="@id/floatingActionButton"-->
+            <!--/>-->
+        <!--<KeyFrameSet>-->
+            <!--<KeyAttribute-->
+                <!--android:scaleX="2"-->
+                <!--android:scaleY="2"-->
+                <!--android:rotation="-45"-->
+                <!--app:framePosition="34"-->
+                <!--app:target="@id/floatingActionButton" />-->
+
+            <!--<KeyAttribute-->
+                <!--android:scaleX="2.5"-->
+                <!--android:scaleY="2.5"-->
+                <!--android:rotation="-90"-->
+                <!--app:framePosition="68"-->
+                <!--app:target="@id/floatingActionButton" />-->
+
+            <!--<KeyPosition-->
+                <!--app:keyPositionType="parentRelative"-->
+                <!--app:percentY="0.5"-->
+                <!--app:percentX="0.5"-->
+                <!--app:framePosition="34"-->
+                <!--app:target="@+id/floatingActionButton"/>-->
+
+            <!--<KeyPosition-->
+                <!--app:keyPositionType="parentRelative"-->
+                <!--app:percentY="0.2"-->
+                <!--app:percentX="0.8"-->
+                <!--app:framePosition="68"-->
+                <!--app:target="@+id/floatingActionButton"/>-->
+        <!--</KeyFrameSet>-->
+    <!--</Transition>-->
+
+    <!--<ConstraintSet android:id="@+id/start">-->
+        <!--<Constraint-->
+            <!--android:id="@id/floatingActionButton"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:pressedTranslationZ="12dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--app:srcCompat="@android:drawable/ic_input_add"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent">-->
+        <!--</Constraint>-->
+    <!--</ConstraintSet>-->
+
+    <!--<ConstraintSet android:id="@+id/end">-->
+        <!--<Constraint-->
+            <!--android:id="@id/floatingActionButton"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:pressedTranslationZ="12dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--app:srcCompat="@android:drawable/ic_input_add"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintBottom_toBottomOf="parent">-->
+
+        <!--</Constraint>-->
+    <!--</ConstraintSet>-->
+</MotionScene>
+
+
+    <!--using crossfade with android.support.constraint.utils.ImageFilterView-->
+    <!--<Constraint-->
+    <!--android:id="@id/imageView"-->
+    <!--android:layout_height="200dp"-->
+    <!--app:layout_constraintEnd_toEndOf="parent"-->
+    <!--app:layout_constraintStart_toStartOf="parent"-->
+    <!--app:layout_constraintTop_toTopOf="parent">-->
+    <!--<CustomAttribute-->
+    <!--app:attributeName="crossfade"-->
+    <!--app:customFloatValue="0" />-->
+    <!--</Constraint>-->
